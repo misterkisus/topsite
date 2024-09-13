@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Пёрнуть и Пописать</title>
+    <!-- Подключение Google Fonts для шрифта Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        /* Сброс стандартных стилей */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Стили для body */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+
+        /* Контейнер для кнопок */
+        #buttons {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #6200ee;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стили для кнопок */
+        .btn {
+            background-color: #bb86fc;
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+
+        .btn:hover {
+            background-color: #3700b3;
+        }
+
+        /* Анимация заполнения страницы желтой жидкостью */
+        #peeAnimation {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            opacity: 0.7;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <!-- Контейнер с кнопками -->
+    <div id="buttons">
+        <button id="fartButton" class="btn">Пёрнуть</button>
+        <button id="peeButton" class="btn">Пописать</button>
+    </div>
+
+    <!-- Контейнер для анимации "пописать" -->
+    <div id="peeAnimation"></div>
+
+    <!-- Аудио для звука пердежа -->
+    <audio id="fartSound">
+        <source src="fart.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+    <script>
+        // Обработчик для кнопки "Пёрнуть"
+        document.getElementById('fartButton').addEventListener('click', function() {
+            var fartSound = document.getElementById('fartSound');
+            fartSound.play();
+        });
+
+        // Обработчик для кнопки "Пописать"
+        document.getElementById('peeButton').addEventListener('click', function() {
+            var peeAnimation = document.getElementById('peeAnimation');
+            peeAnimation.style.transition = 'top 5s linear';
+            peeAnimation.style.top = '0';
+        });
+    </script>
+</body>
+</html>
